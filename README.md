@@ -45,8 +45,11 @@ git push -u origin add-agentty
 ## What is pinned
 
 `agent.json` pins `v0.9.62` of `agentty-org/agentty` with SHA-256 per platform.
-The Linux builds are fully static (musl), so the same asset is declared under
-both the plain and the `-musl` platform key.
+**Seven platform entries map to five release assets**: the Linux builds are fully
+static (no ELF interpreter, no `DT_NEEDED`), so one binary per architecture is
+declared under both the plain and the `-musl` key — `FORMAT.md` allows this
+explicitly, and an installer that prefers `-musl` on a musl host falls back to
+the plain key when it is absent.
 
 | platform | asset |
 |----------|-------|

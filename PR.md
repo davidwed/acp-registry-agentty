@@ -13,8 +13,11 @@ ships a full ACP agent (`agentty acp`), so it can be driven from any
 ACP-compatible editor.
 
 **Distribution:** raw per-platform GitHub release binaries, pinned to `v0.9.62`
-with SHA-256. The Linux builds are fully static (musl), so the same asset is
-declared under both the plain and the `-musl` platform key.
+with SHA-256. **Seven platform entries map to five release assets** — the Linux
+builds are fully static (no ELF interpreter, no `DT_NEEDED`), so one binary per
+architecture is declared under both the plain and the `-musl` key. `FORMAT.md`
+explicitly allows this, and installers that prefer `-musl` on a musl host fall
+back to the plain key if it is absent.
 
 | platform | asset |
 |----------|-------|

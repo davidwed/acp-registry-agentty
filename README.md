@@ -17,6 +17,12 @@ agentty/
 ## Submit (for the upstream owner)
 
 ```sh
+git clone https://github.com/davidwed/acp-registry-agentty
+```
+
+Then:
+
+```sh
 # 1. fork https://github.com/agentclientprotocol/registry on GitHub, then:
 git clone https://github.com/<you>/registry && cd registry
 git checkout -b add-agentty
